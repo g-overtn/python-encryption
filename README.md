@@ -13,3 +13,7 @@ Vigenere Cipher
     The first letter, a, is shifted 4 positions in the alphabet, as the first letter of the key, d, is the 4th letter of the alphabet. 
     Likewise, b is shifted 5 positions, c is shifted 6 positions. 
     Thus, the encrypted string is now: "egi".
+
+Atbash Cipher
+    - Another simple cipher algorithm, which reverses the alphabet so that the first letter maps onto the last letter. 
+    For example, "abc" would be mapped onto "zyx".
