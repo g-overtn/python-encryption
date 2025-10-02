@@ -8,10 +8,10 @@ def CaesarCipher(plaintext : str, key : int, direction : int) -> str:
         direction (int): decides whether to encrypt or decrypt the message. 1: encrypt, -1: decrypt.
 
     Returns:
-        output (str): the encrypted/decrypted string.
+        ciphertext (str): the encrypted/decrypted string.
     """
 
-    output : str = ""
+    ciphertext : str = ""
     alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
     
     for c in plaintext.lower():
@@ -19,11 +19,11 @@ def CaesarCipher(plaintext : str, key : int, direction : int) -> str:
             val = (ord(c) - 96) + (key * direction)
             if val < 1: val += 26
             elif val > 26: val -= 26
-            output += chr(val + 96)
+            ciphertext += chr(val + 96)
         else:
             output += c
 
-    return output
+    return ciphertext
 
 print(CaesarCipher("The quick brown fox jumps over the lazy dog.", 23, 1))
 print(CaesarCipher("qeb nrfzh yoltk clu grjmp lsbo qeb ixwv ald.", 23, -1))
