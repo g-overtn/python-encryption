@@ -21,7 +21,7 @@ def CaesarCipher(plaintext : str, key : int, direction : int) -> str:
             elif val > 26: val -= 26
             ciphertext += chr(val + 96)
         else:
-            output += c
+            ciphertext += c
 
     return ciphertext
 
