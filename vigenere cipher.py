@@ -11,8 +11,8 @@ def VigenereCipher(plaintext : str, key : str, direction : int) -> str:
         ciphertext (str): the encrypted/decrypted string.
     """
 
-    ciphertext = ""
-    keystream = ""
+    ciphertext : str = ""
+    keystream : str = ""
     alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
     plaintext = "".join(c for c in plaintext.lower() if c in alphabet)
 
