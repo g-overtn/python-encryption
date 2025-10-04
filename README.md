@@ -18,7 +18,7 @@ Atbash Cipher
     - Another simple cipher algorithm, which reverses the alphabet so that the first letter maps onto the last letter. 
     For example, "abc" would be mapped onto "zyx".
 
-Diffie-Hellman key exchange
+Diffie-Hellman Key Exchange
     - A mathematical method of generating a symmetric crytpographic key over a public channel. 
     Each party first agree on two public parameters, p (which is a prime modulus) and g (which is a primitive rood modulo p), and each choose their secret key values. 
     The first party sends the second party: A = g^(private_key) mod p. The second party sends the first party: B = g^(private_key) mod p.
