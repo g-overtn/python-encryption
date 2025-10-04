@@ -1,5 +1,5 @@
 # python-encryption
-Some small encryption algorithms created using python. Here, i'll list each encryption algorithm with a short description.
+Some small encryption algorithms / ciphers created using python. Here, i'll list each encryption algorithm with a short description.
 
 Caesar Cipher
     - One of the simplest encryption algorithms, where each letter in the text is replaced by a letter some fixed number of positions down the alphabet, the shift paramenter used as the key. 
@@ -17,3 +17,9 @@ Vigenere Cipher
 Atbash Cipher
     - Another simple cipher algorithm, which reverses the alphabet so that the first letter maps onto the last letter. 
     For example, "abc" would be mapped onto "zyx".
+
+Diffie-Hellman key exchange
+    - A mathematical method of generating a symmetric crytpographic key over a public channel. 
+    Each party first agree on two public parameters, p (which is a prime modulus) and g (which is a primitive rood modulo p), and each choose their secret key values. 
+    The first party sends the second party: A = g^(private_key) mod p. The second party sends the first party: B = g^(private_key) mod p.
+    Then, each party computes s = recieved_value^(private_key) mod p. If everything is correct, both parties have the same shared secret.
