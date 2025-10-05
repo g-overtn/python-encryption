@@ -1,0 +1,58 @@
+def RailFenceEncrypt(plaintext : str, rails: int) -> str:
+    """
+    Performs a Rail Fence Cipher encryption algorithm on a given string, converts input to lowercase and removes punctuation.
+
+    Parameters:
+        plaintext (str): the given string to be encrypted.
+        rails (int): the number of imaginary rails to be used.
+
+    Returns:
+        ciphertext (str): the encrypted string.
+    """
+
+    ciphertext : str = ""
+    alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
+    fence : list = [[] * 1 for i in range(rails)]
+    direction : int = 1
+    rail : int = 0
+    for c in plaintext.lower():
+        if c in alphabet:
+            fence[rail].append(c)
+            rail += direction
+            if rail == 0 or rail == rails - 1:
+                direction *= -1
+
+    for i in range(rails):
+        ciphertext += "".join(c for c in fence[i])
+        ciphertext += " "
+
+    return ciphertext.rstrip()
+
+def RailFenceDecrypt(ciphertext : str, rails: int) -> str:
+    """
+    Performs a Rail Fence Cipher decryption algorithm on a given string, converts input to lowercase and removes punctuation.
+
+    Parameters:
+        cipher (str): the given string to be decrypted.
+        rails (int): the number of imaginary rails to be used.
+
+    Returns:
+        plaintext (str): the decrypted string.
+    """
+    plaintext : str = ""
+    alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
+    fence : list = [[] * 1 for i in range(rails)]
+    direction : int= 1
+    rail : int = 0
+    for c in ciphertext:
+        if c in alphabet:
+            fence[rail].append(c)
+            rail += direction
+            if rail == 0 or rail == rails - 1:
+                direction *= -1
+
+    print(fence)
+    return plaintext
+
+print(RailFenceEncrypt("We are discovered! Run at once!", 3))
+print(RailFenceDecrypt("wecruo erdsoeerntne aivdac", 3))
