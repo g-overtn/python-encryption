@@ -26,6 +26,7 @@ def RailFenceEncrypt(plaintext : str, rails: int) -> str:
         ciphertext += "".join(c for c in fence[i])
         ciphertext += " "
 
+    print(fence)
     return ciphertext.rstrip()
 
 def RailFenceDecrypt(ciphertext : str, rails: int) -> str:
