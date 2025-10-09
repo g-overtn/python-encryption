@@ -1,11 +1,11 @@
 ## python-encryption
 ### Some small encryption algorithms / ciphers created using python. Here, i'll list each encryption algorithm with a short description.
 
-* Caesar Cipher
+* [Caesar Cipher] (caesar cipher.py)
     - One of the simplest encryption algorithms, where each letter in the text is replaced by a letter some fixed number of positions down the alphabet, the shift paramenter used as the key. 
-    For example, plaintext: "abc", key: 5. 
-    Each letter will be shifted 5 positions right, so "a" becomes "f", "b" becomes "g", "c" becomes "h". 
-    Thus, the encrypted string is now: "fgh".
+    - For example, plaintext: "abc", key: 5. 
+    - Each letter will be shifted 5 positions right, so "a" becomes "f", "b" becomes "g", "c" becomes "h". 
+    - Thus, the encrypted string is now: "fgh".
 
 * Vigenere Cipher
     - Each letter of the original text is encoded with a different Caesar cipher, whos increment is determined by the corresponding letter of the key. 
