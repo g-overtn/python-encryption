@@ -26,7 +26,6 @@ def RailFenceEncrypt(plaintext : str, rails: int) -> str:
         ciphertext += "".join(c for c in fence[i])
         ciphertext += " "
 
-    print(fence)
     return ciphertext.rstrip()
 
 def RailFenceDecrypt(ciphertext : str, rails: int) -> str:
@@ -42,18 +41,18 @@ def RailFenceDecrypt(ciphertext : str, rails: int) -> str:
     """
     plaintext : str = ""
     alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
-    fence : list = [[] * 1 for i in range(rails)]
-    direction : int= 1
+    fence : list = ciphertext.split(" ")
+    direction : int = 1
     rail : int = 0
-    for c in ciphertext:
+    for c in ciphertext.lower():
         if c in alphabet:
-            fence[rail].append(c)
+            plaintext += fence[rail][0]
+            fence[rail] = fence[rail][1:] #remove first character from the rail
             rail += direction
             if rail == 0 or rail == rails - 1:
-                direction *= -1
+                    direction *= -1
 
-    print(fence)
     return plaintext
 
-print(RailFenceEncrypt("We are discovered! Run at once!", 3))
-print(RailFenceDecrypt("wecruo erdsoeerntne aivdac", 3))
+print(RailFenceEncrypt("We are discovered! Run at once!", 4))
+print(RailFenceDecrypt("wira edseente aecvduoc rorn", 4))
