@@ -59,6 +59,8 @@ def HillCipherEncrypt(plaintext : str, key : list[list[int]]) -> str:
     return ciphertext
 
 def HillCipherDecrypt():
+    #TODO - docstring for function
+    #TODO - decryption algorithm
     pass
 
 
@@ -69,3 +71,4 @@ key : list[list[int]] = [
 ]
 
 print(HillCipherEncrypt("Pay more money, okay?", key))
+print(HillCipherDecrypt("dynhcrupefapojyids", key))
