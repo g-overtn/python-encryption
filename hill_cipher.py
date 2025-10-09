@@ -14,8 +14,8 @@ def multiplyVectorByMatrix(key_matrix : list[list[int]], chunk_vector : list[int
     for row in key_matrix:
         total : int = 0
         for i in range(n):
-            total += (row[i] + chunk_vector[i])
-        enciphered_vector.append((total % 26) + 1)
+            total += (row[i] * chunk_vector[i])
+        enciphered_vector.append(total % 26 + 1)
     
     return enciphered_vector
 
@@ -58,16 +58,29 @@ def HillCipherEncrypt(plaintext : str, key : list[list[int]]) -> str:
     
     return ciphertext
 
-def HillCipherDecrypt():
-    #TODO - docstring for function
-    #TODO - decryption algorithm
-    pass
+def HillCipherDecrypt(ciphertext : str, key : list[list[int]]) -> str:
+    """
+    Performs a Hill Cipher decryption algorithm on a given ciphertext and an n x n matrix grid as a key.
+    Converts the given string to lowercase and removes punctuation.
+
+    Parameters:
+        ciphertext (str): the given text to be decrypted. Assumes that the string is divisible by n.
+        key (list[list[int]]): an invertible n x n matrix against modulus 26.
+
+    Returns:
+        plaintext (str): the encrypted text.
+    """
+    alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
+    ciphertext = "".join(c for c in ciphertext.lower() if c in alphabet)
+
+    #calculate the inverse matrix of the key
+    return 0
 
 
 key : list[list[int]] = [
     [17, 17, 5],
     [21, 18, 21],
-    [2, 2, 19]
+    [2, 2, 9]
 ]
 
 print(HillCipherEncrypt("Pay more money, okay?", key))
