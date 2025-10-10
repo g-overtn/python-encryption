@@ -70,18 +70,36 @@ def HillCipherDecrypt(ciphertext : str, key : list[list[int]]) -> str:
     Returns:
         plaintext (str): the encrypted text.
     """
+
     alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
     ciphertext = "".join(c for c in ciphertext.lower() if c in alphabet)
 
-    #calculate the inverse matrix of the key
+    #split text into chunks of size n
+    #no need to pad as (if using right key size) ciphertext will be divisible by n
+    n : int = len(key[0])
+    chunks : list[str] = [ciphertext[i:i+n] for i in range(0, len(ciphertext), n)]
+
+    #TODO - calculate the inverse matrix of the key
     return 0
 
 
-key : list[list[int]] = [
+key1 : list[list[int]] = [ 
+    [3, 3],
+    [2, 5]
+]
+
+key2 : list[list[int]] = [
     [17, 17, 5],
     [21, 18, 21],
     [2, 2, 9]
 ]
 
-print(HillCipherEncrypt("Pay more money, okay?", key))
-print(HillCipherDecrypt("dynhcrupefapojyids", key))
+#using a 2x2 matrix as key
+#print(HillCipherEncrypt("Pay more money, okay?", key1))
+print(HillCipherDecrypt("zlklvqcxjwmfahax", key1))
+
+#using a 3x3 matrix as key
+#print(HillCipherEncrypt("Pay more money, okay?", key2))
+#print(HillCipherDecrypt("dynhcrupefapojyids", key2))
+
+#i fear for anyone using a 4x4 matrix
