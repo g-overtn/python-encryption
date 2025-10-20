@@ -95,11 +95,11 @@ key2 : list[list[int]] = [
 ]
 
 #using a 2x2 matrix as key
-#print(HillCipherEncrypt("Pay more money, okay?", key1))
-print(HillCipherDecrypt("zlklvqcxjwmfahax", key1))
+print(HillCipherEncrypt("Pay more money, okay?", key1))
+#print(HillCipherDecrypt("zlklvqcxjwmfahax", key1))
 
 #using a 3x3 matrix as key
-#print(HillCipherEncrypt("Pay more money, okay?", key2))
+print(HillCipherEncrypt("Pay more money, okay?", key2))
 #print(HillCipherDecrypt("dynhcrupefapojyids", key2))
 
 #i fear for anyone using a 4x4 matrix
