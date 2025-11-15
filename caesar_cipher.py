@@ -1,14 +1,14 @@
 def CaesarCipher(text : str, key : int, direction : int) -> str:
     """
-    Performs a Caesar Cipher encryption/decryption algorithm on a given string, converts input to lowercase.
+    Performs a Caesar Cipher encipher/decipher algorithm on a given string, converts input to lowercase.
 
     Parameters:
-        text (str): the given string to be encrypted or decrypted.
-        key (int): the key used to encrypt or decrypt the message.
-        direction (int): decides whether to encrypt or decrypt the message. 1: encrypt, -1: decrypt.
+        text (str): the given string to be enciphered or deciphered,
+        key (int): the key used.
+        direction (int): decides whether to encipher or decipher the message. 1: encipher, -1: decipher.
 
     Returns:
-        output (str): the encrypted/decrypted string.
+        output (str): the enciphered/deciphered string.
     """
 
     output : str = ""

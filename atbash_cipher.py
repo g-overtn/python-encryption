@@ -1,12 +1,12 @@
 def AtbashCipher(text : str) -> str:
     """
-    Performs an Atbash Cipher encryption/decryption algorithm on a given string, converts input to lowercase.
+    Performs an Atbash Cipher encipher/decipher algorithm on a given string, converts input to lowercase.
 
     Parameters:
-        text (str): the given string to be encrypted or decrypted.
+        text (str): the given string to be enciphered or deciphered.
 
     Returns:
-        output (str): the encrypted/decrypted string.
+        output (str): the enciphered/deciphered string.
     """
 
     output : str = ""

@@ -2,17 +2,17 @@
 ### This repository contains some encryption algorithms / ciphers created using python. Here, i'll list each encryption algorithm with a short description.
 
 * [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
-    - One of the simplest encryption algorithms, where each letter in the text is replaced by a letter some fixed number of positions down the alphabet, the shift paramenter used as the key. 
+    - One of the simplest cipher algorithms, where each letter in the text is replaced by a letter some fixed number of positions down the alphabet, the shift paramenter used as the key. 
     - For example, plaintext: "abc", key: 5. 
     - Each letter will be shifted 5 positions right, so "a" becomes "f", "b" becomes "g", "c" becomes "h". 
-    - Thus, the encrypted string is now: "fgh".
+    - Thus, the enciphered string is now: "fgh".
 
 * [Vigenere Cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
     - Each letter of the original text is encoded with a different Caesar cipher, whos increment is determined by the corresponding letter of the key. 
     - For example, plaintext: "abc", key: "def". 
     - The first letter, a, is shifted 4 positions in the alphabet, as the first letter of the key, d, is the 4th letter of the alphabet. 
     - Likewise, b is shifted 5 positions, c is shifted 6 positions. 
-    - Thus, the encrypted string is now: "egi".
+    - Thus, the enciphered string is now: "egi".
 
 * [Atbash Cipher](https://en.wikipedia.org/wiki/Atbash)
     - Another simple cipher algorithm, which reverses the alphabet so that the first letter maps onto the last letter. 
@@ -27,3 +27,16 @@
 * [Rail Fence Cipher](https://en.wikipedia.org/wiki/Rail_fence_cipher)
     - Plaintext is written downwards diagonally on 'rails' of an imaginary fence. Once the bottom rail has been reached, it zigzags up to the top. 
     - For example, plaintext: "hello world" with a 3 'rail' fence: hol elwrd lo
+
+* [Hill Cipher](https://en.wikipedia.org/wiki/Hill_cipher)
+    - Each letter is represented by a modulo 26. Each block of n letters is multiplied by an n x n matrix against modulo 26.
+    - The matrix should be chosen randomly from the set of invertible n x n matrices.
+    - E.g. consider 'ACT', which translates to 0 2 19, with the 3x3 invertible matrix:
+        - 6  24 1
+        - 13 16 10
+        - 20 17 15
+    - mutliplying the matrix by the vector:
+        - 6  24 1      0     67      15
+        - 13 16 10  x  2  =  222  =  14 (mod 26)
+        - 20 17 15     9     319     7
+    - converting 15 14 7 into ciphertext: POH

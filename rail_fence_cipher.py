@@ -1,13 +1,13 @@
 def RailFenceEncrypt(plaintext : str, rails: int) -> str:
     """
-    Performs a Rail Fence Cipher encryption algorithm on a given string, converts input to lowercase and removes punctuation.
+    Performs a Rail Fence Cipher algorithm on a given string, converts input to lowercase and removes punctuation.
 
     Parameters:
         plaintext (str): the given string to be encrypted.
         rails (int): the number of imaginary rails to be used.
 
     Returns:
-        ciphertext (str): the encrypted string.
+        ciphertext (str): the enciphered string.
     """
 
     ciphertext : str = ""
@@ -30,14 +30,14 @@ def RailFenceEncrypt(plaintext : str, rails: int) -> str:
 
 def RailFenceDecrypt(ciphertext : str, rails: int) -> str:
     """
-    Performs a Rail Fence Cipher decryption algorithm on a given string, converts input to lowercase and removes punctuation.
+    Performs a Rail Fence Decipher algorithm on a given string, converts input to lowercase and removes punctuation.
 
     Parameters:
         cipher (str): the given string to be decrypted.
         rails (int): the number of imaginary rails to be used.
 
     Returns:
-        plaintext (str): the decrypted string.
+        plaintext (str): the deciphered string.
     """
     plaintext : str = ""
     alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
