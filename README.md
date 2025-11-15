@@ -27,7 +27,3 @@
 * [Rail Fence Cipher](https://en.wikipedia.org/wiki/Rail_fence_cipher)
     - Plaintext is written downwards diagonally on 'rails' of an imaginary fence. Once the bottom rail has been reached, it zigzags up to the top. 
     - For example, plaintext: "hello world" with a 3 'rail' fence: hol elwrd lo
-
-* [Hill cipher](https://en.wikipedia.org/wiki/Hill_cipher)
-    - Each letter is represented by a number modulo 26. Each block of n letters (considered an n-component vector) is multiplied by an invertible n x n matrix, against modulus 26. 
-    - The cipher key is chosen randomly from the set of invertible n x n matrices.
