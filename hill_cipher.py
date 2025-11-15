@@ -1,3 +1,5 @@
+import numpy as py
+
 def multiplyVectorByMatrix(key_matrix : list[list[int]], chunk_vector : list[int]) -> list[int]:
     """
     Mutliplies the given n-component vector by the given key matrix, then returns the result against modulus 26.
@@ -7,7 +9,7 @@ def multiplyVectorByMatrix(key_matrix : list[list[int]], chunk_vector : list[int
         chunk_vector (list[int]): an n-component vector.
 
     Returns:
-        enciphered_vector (list[int]): the result n-component vector.
+        enciphered_vector (list[int]): the result n-component vector against modulo 26.
     """
     enciphered_vector : list[int] = []
     n : int = len(chunk_vector)
@@ -34,7 +36,7 @@ def HillCipherEncrypt(plaintext : str, key : list[list[int]]) -> str:
     alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
     plaintext = "".join(c for c in plaintext.lower() if c in alphabet)
 
-    #split text into chunks of size n, pad with 'x'
+    #split text into chunks of size n, pad with 'x' if necessary
     n : int = len(key[0])
     chunks : list[str] = [plaintext[i:i+n] for i in range(0, len(plaintext), n)]
     last_chunk_len : int = len(chunks[-1])
@@ -95,11 +97,11 @@ key2 : list[list[int]] = [
 ]
 
 #using a 2x2 matrix as key
-print(HillCipherEncrypt("Pay more money, okay?", key1))
-#print(HillCipherDecrypt("zlklvqcxjwmfahax", key1))
+print(f"ENCRYPT 'Pay more money, okay?' WITH 2x2: {HillCipherEncrypt("Pay more money, okay?", key1)}")
+print(F"DECRYPT 'zlklvqcxjwmfahax' WITH 2x2: {HillCipherDecrypt("zlklvqcxjwmfahax", key1)}")
 
 #using a 3x3 matrix as key
-print(HillCipherEncrypt("Pay more money, okay?", key2))
-#print(HillCipherDecrypt("dynhcrupefapojyids", key2))
+print(f"ENCRYPT 'Pay more money, okay?' WITH 3X3: {HillCipherEncrypt("Pay more money, okay?", key2)}")
+print(F"DECRYPT 'yvzulkrepgzdfojrfc' WITH 3x3: {HillCipherDecrypt("yvzulkrepgzdfojrfc", key1)}")
 
 #i fear for anyone using a 4x4 matrix
