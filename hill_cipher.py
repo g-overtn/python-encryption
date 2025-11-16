@@ -1,9 +1,9 @@
+import numpy as np
 
-
-def HillCipherEncrypt(plaintext : str, matrix : list[list[int]]) -> str:
+def HillCipherEncrypt(plaintext : str, m : np.matrix) -> str:
     """
     Performs a hill cipher enciphering algorithm on a given string and n x n invertible matrix against modulo 26, converts to lowercase and removes punctuation. 
-    Assumes it is invertible and modulo 26.
+    Assumes the matrix is invertible.
     If the length of the string is not divisible by n, pads with x.
 
     Parameters:
@@ -15,7 +15,8 @@ def HillCipherEncrypt(plaintext : str, matrix : list[list[int]]) -> str:
     """
     ciphertext : str = ""
     alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
-    n : int = len(matrix)
+    m = m % 26
+    n : int = len(m)
 
     #converting our string into chunks and padding
     plaintext = "".join(c for c in plaintext.lower() if c in alphabet)
@@ -26,24 +27,54 @@ def HillCipherEncrypt(plaintext : str, matrix : list[list[int]]) -> str:
     vectors : list[list[int]] = []
     for chunk in chunks:
         vectors.append([ord(s) - 97 for s in chunk])
-    print(vectors)
 
-    #multiplying each vector by the matrix
+    #multiplying each vector by the matrix and applying modulo 26
+    vectors = [m.dot(v) % 26 for v in vectors]
 
+    #converting vectors back into characters
+    for v in vectors:
+        new_chunk : str = "".join([chr(x + 97) for x in np.nditer(v)])
+        ciphertext += new_chunk
 
     return ciphertext
 
+def HillCipherDecrypt(ciphertext : str, m : np.matrix) -> str:
+    """
+    Performs a hill cipher decryption algorithm on a given string and n x n invertible matrix against modulo 26, converts to lowercase and removes punctuation.
+    Assumes the matrix is invertible.
+    Assumes the string is divisible by n, else your matrix key is wrong.
+    """
+    plaintext : str = ""
+    alphabet : set = set("abcdefghijklmnopqrstuvwxyz")
+    m = m % 26
+    n : int = len(m)
+
+    #converting our string into chunks
+    ciphertext = "".join(c for c in ciphertext.lower() if c in alphabet)
+    chunks : list[list[str]] = [ciphertext[i:i+n] for i in range(0, len(ciphertext), n)]
+
+    #converting chunks into vectors
+    vectors : list[list[int]] = []
+    for chunk in chunks:
+        vectors.append([ord(s) - 97 for s in chunk])
+    
+    #calculating inverse matrix against modulo 26
+    mI = np.linalg.inv(m)
+    print(mI)
+    print(mI.round())
+
+    return plaintext
+
+
 #2x2 matrix key
-key2 : list[list[int]] = [
-    [6, 24],
-    [13, 16]
-]
+key2 : np.matrix = np.matrix([[3, 3], 
+                              [2, 5]])
 
 #3x3 matrix key
-key3 : list[list[int]] = [
-    [6, 24, 1],
-    [13, 16, 10],
-    [20, 17, 15]
-]
+key3 : np.matrix = np.matrix([[6, 24, 1], 
+                              [13, 16, 10], 
+                              [20, 17, 15]])
 
-print(HillCipherEncrypt("The name of the game is survival!", key3))
+#print(HillCipherEncrypt("The name of the game is survival!", key3))
+print(HillCipherEncrypt("act", key3))
+print(HillCipherDecrypt("poh", key3))
