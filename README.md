@@ -56,3 +56,19 @@
         - 13 16 10  x  2  =  222  =  14 (mod 26)
         - 20 17 15     9     319     7
     - converting 15 14 7 into ciphertext: POH
+
+* [Nihilist Cipher](https://en.wikipedia.org/wiki/Nihilist_cipher)
+    - A [polybius square](https://en.wikipedia.org/wiki/Polybius_square) is created using a mixed alphabet generated with the key.
+    - This is then used to convert both plaintext and a key into a series of 2-digit number, of which are added together.
+    - Either a single key can be used, or two seperate ones.
+    - Consider the polybius square key: 'zebras', plaintext: 'computers' and second key: 'hello'
+    - The generated polybius square:
+        -    	1	2	3	4	5
+        -   1	Z	E	B	R	A
+        -   2	S	C	D	F	G
+        -   3	H	I/J	K	L	M
+        -   4	N	O	P	Q	T
+        -   5	U	V	W	X	Y 
+    - Which converts the plaintext into: 22 42 35 43 51 45 12 14 21
+    - The key is extended and converted into: 31 12 34 34 42 31 12 34 34
+    - Added the two to make the ciphertext: 53 54 69 77 93 86 33 48 55

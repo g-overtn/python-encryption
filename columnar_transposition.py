@@ -1,4 +1,4 @@
-def ColumnarEncrypt(plaintext : str, key : str) -> str:
+def ColumnarEncipher(plaintext : str, key : str) -> str:
     """
     Performs a columnar transposition ciphering algorithm on the provided string using the provided keyword, converts input to lowercase and removes punctuation.
     If there are any null spaces, replaces with x.
@@ -15,7 +15,7 @@ def ColumnarEncrypt(plaintext : str, key : str) -> str:
     alphabet : list = list("abcdefghijklmnopqrstuvwxyz")
     plaintext = "".join(c for c in plaintext.lower() if c in set(alphabet))
     n : int = len(key)
-    key = list(key)
+    key = list(key.lower())
 
     #getting column permutation
     cur : int = 1
@@ -38,7 +38,7 @@ def ColumnarEncrypt(plaintext : str, key : str) -> str:
 
     return ciphertext
 
-def ColumnarDecrypt(ciphertext : str, key : str) -> str:
+def ColumnarDecipher(ciphertext : str, key : str) -> str:
     """
     Performs a columnar transposition deciphering algorithm on the provided string with the provided keyword, converts input to lowercase and removes punctuation.
     
@@ -53,7 +53,7 @@ def ColumnarDecrypt(ciphertext : str, key : str) -> str:
     alphabet : list = list("abcdefghijklmnopqrstuvwxyz")
     ciphertext = "".join(c for c in ciphertext.lower() if c in set(alphabet))
     n : int = len(key)
-    key = list(key)
+    key = list(key.lower())
 
     #getting column permutation
     cur : int = 1
@@ -79,5 +79,5 @@ def ColumnarDecrypt(ciphertext : str, key : str) -> str:
 
     return plaintext
 
-print(ColumnarEncrypt("We are discovered. Flee at once!", "zebras"))
-print(ColumnarDecrypt("evlnxacdtxeseaxrofoxdeecxwiree", "zebras"))
+print(ColumnarEncipher("We are discovered. Flee at once!", "zebras"))
+print(ColumnarDecipher("evlnxacdtxeseaxrofoxdeecxwiree", "zebras"))

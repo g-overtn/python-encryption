@@ -1,4 +1,4 @@
-def RailFenceEncrypt(plaintext : str, rails: int) -> str:
+def RailFenceEncipher(plaintext : str, rails: int) -> str:
     """
     Performs a Rail Fence Cipher algorithm on a given string, converts input to lowercase and removes punctuation.
 
@@ -28,7 +28,7 @@ def RailFenceEncrypt(plaintext : str, rails: int) -> str:
 
     return ciphertext.rstrip()
 
-def RailFenceDecrypt(ciphertext : str, rails: int) -> str:
+def RailFenceDecipher(ciphertext : str, rails: int) -> str:
     """
     Performs a Rail Fence Decipher algorithm on a given string, converts input to lowercase and removes punctuation.
 
@@ -54,5 +54,5 @@ def RailFenceDecrypt(ciphertext : str, rails: int) -> str:
 
     return plaintext
 
-print(RailFenceEncrypt("We are discovered! Run at once!", 4))
-print(RailFenceDecrypt("wira edseente aecvduoc rorn", 4))
+print(RailFenceEncipher("We are discovered! Run at once!", 4))
+print(RailFenceDecipher("wira edseente aecvduoc rorn", 4))

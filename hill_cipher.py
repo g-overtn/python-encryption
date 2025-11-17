@@ -1,6 +1,6 @@
 import numpy as np
 
-def HillCipherEncrypt(plaintext : str, m : np.matrix) -> str:
+def HillEncipher(plaintext : str, m : np.matrix) -> str:
     """
     Performs a hill cipher enciphering algorithm on a given string and n x n invertible matrix against modulo 26, converts to lowercase and removes punctuation. 
     Assumes the matrix is invertible.
@@ -38,7 +38,7 @@ def HillCipherEncrypt(plaintext : str, m : np.matrix) -> str:
 
     return ciphertext
 
-def HillCipherDecrypt(ciphertext : str, m : np.matrix) -> str:
+def HillDecipher(ciphertext : str, m : np.matrix) -> str:
     """
     Performs a hill cipher decryption algorithm on a given string and n x n invertible matrix against modulo 26, converts to lowercase and removes punctuation.
     Assumes the matrix is invertible.
@@ -83,5 +83,5 @@ key3 : np.matrix = np.matrix([[6, 24, 1],
                               [20, 17, 15]])
 
 #print(HillCipherEncrypt("The name of the game is survival!", key3))
-print(HillCipherEncrypt("act", key3))
-print(HillCipherDecrypt("poh", key3))
+print(HillEncipher("act", key3))
+print(HillDecipher("poh", key3))
