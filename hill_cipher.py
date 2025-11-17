@@ -8,7 +8,7 @@ def HillCipherEncrypt(plaintext : str, m : np.matrix) -> str:
 
     Parameters:
         plaintext (str): the plaintext to be enciphered.
-        matrix (list[list[int]]): the matrix used.
+        matrix (np.matrix): the key matrix used.
 
     Returns:
         ciphertext (str): the enciphered result.
@@ -43,6 +43,13 @@ def HillCipherDecrypt(ciphertext : str, m : np.matrix) -> str:
     Performs a hill cipher decryption algorithm on a given string and n x n invertible matrix against modulo 26, converts to lowercase and removes punctuation.
     Assumes the matrix is invertible.
     Assumes the string is divisible by n, else your matrix key is wrong.
+
+    Parameters:
+        ciphertext (str): the string to be deciphered.
+        matrix (np.matrix): the key matrix used.
+
+    Returns:
+        ciphertext (str): the deciphered result.
     """
     plaintext : str = ""
     alphabet : set = set("abcdefghijklmnopqrstuvwxyz")

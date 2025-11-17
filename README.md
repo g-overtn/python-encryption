@@ -28,6 +28,22 @@
     - Plaintext is written downwards diagonally on 'rails' of an imaginary fence. Once the bottom rail has been reached, it zigzags up to the top. 
     - For example, plaintext: "hello world" with a 3 'rail' fence: hol elwrd lo
 
+* [Columnar Transposition Cipher](https://en.wikipedia.org/wiki/Transposition_cipher#Columnar_transposition)
+    - Plaintext is written out in rows of a fixed length, then read out again column by column, the columns chosen in a scrambled order.
+    - The width of the rows and permutation of the columns are chosen by a keyword
+    - E.g. consider the keyword: ZEBRAS and plaintext: we are discovered. flee at once
+        - 6 letters long, so each row as a width of 6.
+        - Column permutation determined by order of letters, so '6 3 2 4 1 5'
+        - Writing this to the grid:
+            - 6 3 2 4 1 5
+            - W E A R E D
+            - I S C O V E 
+            - R E D F L E 
+            - E A T O N C 
+            - E _ _ _ _ _ 
+        - The ciphertext once read: EVLN_ ACDT_ ESEA_ ROFO_ DEEC_ WIREE 
+        - There are 5 nulls, these can be filled with any letter
+
 * [Hill Cipher](https://en.wikipedia.org/wiki/Hill_cipher)
     - Each letter is represented by a modulo 26. Each block of n letters is multiplied by an n x n matrix against modulo 26.
     - The matrix should be chosen randomly from the set of invertible n x n matrices.
