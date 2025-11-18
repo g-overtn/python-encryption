@@ -66,7 +66,7 @@ def NihilistEncipher(plaintext : str, key1 : str, key2: str) -> str:
     nums : list[int] = convertNums(plaintext)
 
     #shrink/extend key2 and convert into nums
-    n = len(plaintext)
+    n : int = len(plaintext)
     keystream : str = ""
     for i in range(n // len(key2)):
         keystream += key2
@@ -103,7 +103,7 @@ def NihilistDecipher(ciphertext : str, key1 : str, key2 : str) -> str:
     ciphertext = ciphertext.split(" ") #split string into a list of numbers
 
     #shrink/extend key2 and convert into coordinates
-    n = len(ciphertext)
+    n : int = len(ciphertext)
     keystream : str = ""
     for i in range(n // len(key2)):
         keystream += key2
