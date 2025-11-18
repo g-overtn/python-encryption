@@ -63,12 +63,11 @@
     - Either a single key can be used, or two seperate ones.
     - Consider the polybius square key: 'zebras', plaintext: 'computers' and second key: 'hello'
     - The generated polybius square:
-        -    	1	2	3	4	5
-        -   1	Z	E	B	R	A
-        -   2	S	C	D	F	G
-        -   3	H	I/J	K	L	M
-        -   4	N	O	P	Q	T
-        -   5	U	V	W	X	Y 
+        -	Z	E	B	R	A
+        -	S	C	D	F	G
+        -	H	I/J	K	L	M
+        -	N	O	P	Q	T
+        -	U	V	W	X	Y 
     - Which converts the plaintext into: 22 42 35 43 51 45 12 14 21
     - The key is extended and converted into: 31 12 34 34 42 31 12 34 34
     - Added the two to make the ciphertext: 53 54 69 77 93 86 33 48 55
