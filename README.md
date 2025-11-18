@@ -71,3 +71,9 @@
     - Which converts the plaintext into: 22 42 35 43 51 45 12 14 21
     - The key is extended and converted into: 31 12 34 34 42 31 12 34 34
     - Added the two to make the ciphertext: 53 54 69 77 93 86 33 48 55
+
+* [XOR cipher](https://en.wikipedia.org/wiki/XOR_cipher)
+    - Operates according to the [XOR](https://en.wikipedia.org/wiki/Exclusive_or) operation.
+    - A bitwise XOR operation is applied to each character in a given string using a given key. 
+    - Take plaintext: "hello", and key: "hi".
+    - Extending the key: "hihih", then performing XOR on each character: ammdj
