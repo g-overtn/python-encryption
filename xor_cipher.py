@@ -1,19 +1,15 @@
-def xorEncipher(plaintext : str, key : str) -> str:
+def xorCipher(plaintext : str, key : str) -> str:
     """
-    Performs an xor enciphering algorithm on the provided string with a given key.
-    Converts both string and key to lowercase and removes punctuation.
+    Performs an xor ciphering algorithm on the provided string with a given key.
 
     Parameters:
-        plaintext (str): the text to encipher.
+        plaintext (str): the text to encipher/decipher.
         key (str): the key used.
 
     Returns:
-        ciphertext (str): the enciphered text.
+        ciphertext (str): the enciphered/deciphered text.
     """
     ciphertext : str = ""
-    alphabet : list = list("abcdefghijklmnopqrstuvwxyz")
-    plaintext = "".join(c for c in plaintext.lower() if c in set(alphabet))
-    key = "".join(c for c in key.lower() if c in set(alphabet))
 
     #shrink/extend key to match plaintext length
     n : int = len(plaintext)
@@ -22,9 +18,13 @@ def xorEncipher(plaintext : str, key : str) -> str:
         keystream += key
     keystream += key[:n % len(key)]
 
+    #xor each character together, mod 26 then add to ciphertext
     for i in range(n):
-        print(f"{plaintext[i]} : {ord(plaintext[i]) - 97}, {keystream[i]} : {ord(keystream[i]) - 97}, {plaintext[i] ^ keystream[i] = }")
+        ciphertext += chr((ord(plaintext[i]) - 97 ^ ord(keystream[i]) - 97) + 97)
 
     return ciphertext
 
-print(xorEncipher("We all love computer science!", "nuh uh!"))
+
+k : str = "comp sci"
+a : str = xorCipher("abcdefghijklmnopqrstuvwxyz", k); print(a)
+b : str = xorCipher(a, k); print(b)
