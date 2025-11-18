@@ -25,6 +25,6 @@ def xorCipher(plaintext : str, key : str) -> str:
     return ciphertext
 
 
-k : str = "hi"
-a : str = xorCipher("hello", k); print(a)
+k : str = "comp sci"
+a : str = xorCipher("abcdefghijklmnopqrstuvwxyz", k); print(a)
 b : str = xorCipher(a, k); print(b)
