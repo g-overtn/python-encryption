@@ -63,7 +63,7 @@
     - Either a single key can be used, or two seperate ones.
     - Consider the polybius square key: 'zebras', plaintext: 'computers' and second key: 'hello'
     - The generated polybius square:
-        -    	1	2	3	4	5
+        -   / 	1	2	3	4	5
         -   1	Z	E	B	R	A
         -   2	S	C	D	F	G
         -   3	H	I/J	K	L	M
