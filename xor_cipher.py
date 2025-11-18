@@ -18,7 +18,7 @@ def xorCipher(plaintext : str, key : str) -> str:
         keystream += key
     keystream += key[:n % len(key)]
 
-    #xor each character together, mod 26 then add to ciphertext
+    #xor each character's ord() together, then add ascii character to ciphertext
     for i in range(n):
         ciphertext += chr((ord(plaintext[i]) - 97 ^ ord(keystream[i]) - 97) + 97)
 
