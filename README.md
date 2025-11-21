@@ -79,9 +79,8 @@
     - Extending the key: "hihih", then performing XOR on each character: ammdj
 
 * [Data Encryption Standard (DES)](https://en.wikipedia.org/wiki/Data_Encryption_Standard)
-    - A symmetric block cipher that takes a 64-bit plaintext and produces a 64-bit ciphertext using a 56-bit key.
+    - A symmetric block cipher that takes a 64-bit plaintext and produces a 64-bit ciphertext using a 64-bit key.
     - It uses a 16-round [Feistel Cipher](https://en.wikipedia.org/wiki/Feistel_cipher) network to encrypt and decrypt data.
     - The bits are put into an initial permutation, then passed into the first round of encryption.
-    - For each round, a different 48-bit key is generated from the 56-bit key
-        - 
+    - For each round, a different 48-bit key is generated from the 56-bit key.
     - After the 16 rounds, the ciphertext is split into 32-bit halves, swapped around, then put into a final permutation.
